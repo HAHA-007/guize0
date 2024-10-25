@@ -1,0 +1,132 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+clash-for-android:
+    append-system-dns: false
+experimental:
+    sniff-tls-sni: true
+profile:
+    store-selected: false
+    store-fake-ip: true
+dns:
+    enable: true
+    ipv6: false
+    listen: '127.0.0.1:5334'
+    default-nameserver: [180.184.1.1, 119.29.29.29, 223.5.5.5]
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://dns.alidns.com/dns-query', 'https://doh.pub/dns-query', 'tls://223.5.5.5:853']
+    fallback: ['https://101.101.101.101/dns-query', 'https://doh.apad.pro/dns-query', 'https://208.67.220.220/dns-query']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 223.75.236.241/32, 182.43.124.6/32, 106.74.25.198/32, 183.192.65.101/32], domain: [+.google.cn, +.youtu0.com, +.youtunice.com, +.youtu6.shop, +.youtu7.shop, +.youtu8.shop, +.youtulink3.top, +.youtulink4.top, +.jsdelivr.net, +.proton.me] }
+#节点
+proxies:
+    - { name: '🇭🇰 香港00', type: trojan, server: 8h7rvq.bigmeyear.org, port: 20000, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true, sni: mirrorcos.bilivideo.com, skip-cert-verify: true }
+    - { name: '🇭🇰 香港01', type: ss, server: o5gemq.bigmeyear.org, port: 20001, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇭🇰 香港02', type: ss, server: 4mkdx0.bigmeyear.org, port: 20232, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇭🇰 香港03', type: ss, server: 7wsitt.bigmeyear.org, port: 20233, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇭🇰 香港04', type: ss, server: dmshs4.bigmeyear.org, port: 20234, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇨🇳 台湾01', type: ss, server: npunap.bigmeyear.org, port: 20334, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇨🇳 台湾02', type: ss, server: pvmatw.bigmeyear.org, port: 20335, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇨🇳 台湾03', type: ss, server: z01tyt.bigmeyear.org, port: 20336, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇸🇬 新加坡01', type: ss, server: goh8x3.bigmeyear.org, port: 30234, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇸🇬 新加坡02', type: ss, server: exiczs.bigmeyear.org, port: 30235, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇸🇬 新加坡03', type: ss, server: 7sshgq.bigmeyear.org, port: 30233, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇮🇩 印尼01', type: ss, server: cfbqtz.bigmeyear.org, port: 30733, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇰🇷 韩国01', type: ss, server: 81xh0xbp.bigmeyear.org, port: 30734, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇯🇵 日本01', type: ss, server: jp01.bigmeyear.org, port: 30236, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇯🇵 日本02', type: ss, server: jp02.bigmeyear.org, port: 30237, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇯🇵 日本03', type: ss, server: jp03.bigmeyear.org, port: 30250, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇺🇸 美国01', type: ss, server: us01.bigmeyear.org, port: 30238, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇺🇸 美国02', type: ss, server: us02.bigmeyear.org, port: 30240, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇺🇸 美国03', type: ss, server: us03.bigmeyear.org, port: 30241, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇩🇪 德国01', type: ss, server: rare01.bigmeyear.org, port: 20702, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+    - { name: '🇹🇷 土耳其01', type: ss, server: rare02.bigmeyear.org, port: 20703, cipher: aes-128-gcm, password: 8fe09985-109e-4433-a527-5d16021e1ede, udp: true }
+# 锚点
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 台湾故转, 🔯 新加坡故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 新加坡自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点,🌐 全部节点, 🟢 直连]}
+# 策略组
+proxy-groups:
+  - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转, 🔯 新加坡故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 新加坡自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点,🌐 全部节点, 🟢 直连]}
+  - {name: 📹 YouTube,!!merge <<: *pr}
+  - {name: 🍀 Google,!!merge <<: *pr}
+  - {name: 🤖 ChatGPT,!!merge <<: *pr}
+  - {name: 👨🏿‍💻 GitHub,!!merge <<: *pr}
+  - {name: 🐬 OneDrive,!!merge <<: *pr}
+  - {name: 🪟 Microsoft,!!merge <<: *pr}
+  - {name: 🎵 TikTok,!!merge <<: *pr}
+  - {name: 📲 Telegram,!!merge <<: *pr}
+  - {name: 🎥 NETFLIX,!!merge <<: *pr}
+  - {name: ✈️ Speedtest,!!merge <<: *pr}
+  - {name: 💶 PayPal,!!merge <<: *pr}
+  - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
+  - {name: 🐟 漏网之鱼,!!merge <<: *pr}
+  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
+  - {name: 🇹🇼 台湾节点, type: select, include-all: true, filter: "(?i)台|tw|taiwan|tai wan"}
+  - {name: 🇸🇬 新加坡节点, type: select, include-all: true, filter: "(?i)新|sg|singapore"}
+  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
+  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$"}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Tai))^((?!(港|日|韩|新|美)).)*$"}
+  - {name: 🔯 新加坡故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(台|日|韩|港|美)).)*$"}
+  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)America))^((?!(港|台|韩|新|日)).)*$" }
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$"}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Tai))^((?!(港|日|韩|新|美)).)*$"}
+  - {name: ♻️ 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(台|日|韩|港|美)).)*$"}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
+  - {name: 🌐 全部节点, type: select, include-all: true}
+rules:
+  - RULE-SET,private_domain,🟢 直连
+  - RULE-SET,apple_domain,🍎 Apple
+  - RULE-SET,proxylite,🚀 节点选择
+  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,onedrive_domain,🐬 OneDrive
+  - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,tiktok_domain,🎵 TikTok
+  - RULE-SET,speedtest_domain,✈️ Speedtest
+  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,cn_ip,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  qcy: &qcy {type: http, interval: 86400, behavior: domain, format: text}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  proxylite: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"}
+  ai: {!!merge <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/AI.list"}
+  youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
+  google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
+  github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
+  telegram_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  netflix_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  paypal_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
+  onedrive_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
+  microsoft_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
+  apple_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
+  speedtest_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
+  tiktok_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
+  gfw_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  geolocation-!cn: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  
+  cn_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  google_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
+  telegram_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  netflix_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
